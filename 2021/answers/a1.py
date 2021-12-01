@@ -1,7 +1,12 @@
 
 
+from itertools import pairwise
 
 def part1(file):
+    # obscene one liner:
+    print(sum([1 for dp in pairwise((int(l) for l in open(file))) if dp[0] < dp[1]]))
+
+    # readable solution:
     with open(file) as f:
         depths = [int(l) for l in f.readlines()]
         count = 0
@@ -15,6 +20,10 @@ def part1(file):
 #-------------------------------------------------------------------------------
 
 def part2(file):
+    # obscene one liner:
+    print(sum([1 for dp in pairwise(map(sum,[zip(ds[:-2],ds[1:-1],ds[2:]) for ds in [[int(l) for l in open(file)]]] [0])) if dp[0] < dp[1]]))
+
+    # readable solution:
     with open(file) as f:
         depths = [int(l) for l in f.readlines()]
         count = 0
@@ -31,7 +40,7 @@ def part2(file):
 def main():
     filename = 'example.txt'
     filename = 'data.txt'
-    part1(filename)
+    # part1(filename)
     part2(filename)
 
 if __name__ == '__main__':
