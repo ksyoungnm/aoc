@@ -1,4 +1,4 @@
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 def lineiter(p1,p2):
     s1 = (p2[0]-p1[0]) // abs(p2[0]-p1[0]) if (p2[0]-p1[0]) != 0 else 0
@@ -38,14 +38,17 @@ def part2(file):
 
         print(len([1 for sp in spots.values() if sp >= 2]))
 
+def dontlook(file):
+    print(sum(1 for key,val in Counter((p for line in [(tuple(map(int,l[0].split(','))),tuple(map(int,l[1].split(',')))) for l in [l.strip().split(' -> ') for l in open(file)]] for p in lineiter(*line))).items() if val >= 2))
         
 #-------------------------------------------------------------------------------
 
 def main():
     filename = 'example.txt'
-    filename = 'data.txt'
+    filename = '../datasets/5.txt'
     part1(filename)
     part2(filename)
+    dontlook(filename)
 
 if __name__ == '__main__':
     main()
