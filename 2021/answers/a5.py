@@ -21,7 +21,7 @@ def part1(file):
             for p in lineiter(*line):
                 spots[p] += 1
         
-        print(len([1 for sp in spots.values() if sp >= 2]))
+        print(sum(1 for sp in spots.values() if sp >= 2))
         
 #-------------------------------------------------------------------------------
 
@@ -36,10 +36,10 @@ def part2(file):
             for p in lineiter(*line):
                 spots[p] += 1
 
-        print(len([1 for sp in spots.values() if sp >= 2]))
+        print(sum(1 for sp in spots.values() if sp >= 2))
 
 def dontlook(file):
-    print(sum(1 for key,val in Counter((p for line in [(tuple(map(int,l[0].split(','))),tuple(map(int,l[1].split(',')))) for l in [l.strip().split(' -> ') for l in open(file)]] for p in lineiter(*line))).items() if val >= 2))
+    print(sum(1 for val in Counter(p for line in [(tuple(map(int,l[0].split(','))),tuple(map(int,l[1].split(',')))) for l in [l.split(' -> ') for l in open(file)]] for p in lineiter(*line)).values() if val >= 2))
         
 #-------------------------------------------------------------------------------
 
