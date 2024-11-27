@@ -1,0 +1,5 @@
+2019/target
+2019/sensitive_info.txt
+*data.txt
+*.DS_Store
+.zed
