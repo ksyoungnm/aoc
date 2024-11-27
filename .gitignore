@@ -1,5 +1,7 @@
 2019/target
 2019/sensitive_info.txt
+2020/datasets
+2021/datasets
 *data.txt
 *.DS_Store
 .zed
