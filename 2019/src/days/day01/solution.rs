@@ -1,5 +1,6 @@
 
 use std::fs;
+use std::env;
 
 fn part1(filename:&str) {
     let data = fs::read_to_string(filename).unwrap();
@@ -31,9 +32,13 @@ fn part2(filename:&str) {
 
 pub fn main() {
 
-    // let filename = "days/day01/example.txt";
-    let filename = "days/day01/data.txt";
-    // part1(filename);
-    part2(filename);
+    let datafile = "example.txt";
+    let datafile = "data.txt";
+
+    let mut filename = "/Users/youngk/aoc/2019/src/days/day01/".to_string();
+    filename.push_str(datafile);
+
+    // part1(&filename);
+    part2(&filename);
 
 }
