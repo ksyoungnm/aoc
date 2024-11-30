@@ -14,10 +14,14 @@ fn part2(filename:&str) {
 }
 
 pub fn main() {
-    // let filename = "days/dayAA/example.txt";
-    let filename = "days/dayAA/data.txt";
-    // part1(filename);
-    part2(filename);
+    let datafile = "example.txt";
+    // let datafile = "data.txt";
+
+    let mut filename = "/Users/youngk/aoc/2019/src/days/dayAA/".to_string();
+    filename.push_str(datafile);
+
+    part1(&filename);
+    // part2(&filename);
 }
 
 '''
@@ -46,7 +50,7 @@ def build_dirs():
                 rustfile.write(rustprogram)
 
 def fix_solutions():
-    to_fix = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
+    to_fix = [3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
     for i in to_fix:
         str_i = str(i)
         if len(str_i) == 1:
@@ -55,8 +59,8 @@ def fix_solutions():
             rustfile.write(rustprogram.replace('AA', str_i))
 
 def main():
-    build_dirs()
-    # fix_solutions()
+    # build_dirs()
+    fix_solutions()
 
 if __name__ == '__main__':
     main()

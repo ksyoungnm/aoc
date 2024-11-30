@@ -11,9 +11,13 @@ fn part2(filename:&str) {
 }
 
 pub fn main() {
-    // let filename = "days/day05/example.txt";
-    let filename = "days/day05/data.txt";
-    // part1(filename);
-    part2(filename);
+    let datafile = "example.txt";
+    // let datafile = "data.txt";
+
+    let mut filename = "/Users/youngk/aoc/2019/src/days/day05/".to_string();
+    filename.push_str(datafile);
+
+    part1(&filename);
+    // part2(&filename);
 }
 
